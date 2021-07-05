@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	border: 2px solid black;
+	width: 100%;
+}
+
+td, th {
+	border: 2px solid black;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+</style>
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/personalPage.css}">
+
+<title>SEZIONE ADMIN</title>
+
+<link
+	href="https://fonts.googleapis.com/css?family=Manjari&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+
+<script
+	src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+</head>
+<body>
+
+	<form method="get" action="/KanbanModel/logout" class="form-horizontal">
+
+		<div class="form-actions">
+			<input type="submit" id="logout" class="button button-block"
+				value="LOGOUT">
+		</div>
+
+	</form>
+
+	<form method="get" action="/KanbanModel/success"
+		class="form-horizontal">
+
+		<div class="form-actions" id = "areaPersonaleButton">
+			<input type="submit" id="logout" class="button button-block"
+				value="AREA PERSONALE">
+		</div>
+
+	</form>
+	
+	<div id = "backButton">
+	</div>
+
+	<div>
+		<h1 id="Benvenuto">WELCOME NELLA SEZIONE ADMIN!</h1>
+	</div>
+
+	<div>
+		<h2>Utenti Registrati nel Sistema KanbanBoard:</h2>
+
+		<table id="listaLogin">
+
+			<tr>
+				<th>USERNAME</th>
+				<th>TIMESTAMP CREAZIONE</th>
+				<th>TIMESTAMP LOGIN</th>
+				<th>TIMESTAMP LOGOUT</th>
+				<th>ELIMINA UTENTE</th>
+				<th>VEDI COLONNE</th>
+			</tr>
+
+
+		</table>
+
+
+
+	</div>
+
+	<div id = "colonneDiv">
+
+
+		<div id = "colonneInCorso">
+			<h1>Colonne in Corso</h1>
+
+			<div class="base" id="columnContainerInCorso"></div>
+
+		</div>
+
+		<div id = "colonneArchiviate">
+			<h1>Colonne Archiviate</h1>
+
+			<div class="base" id="columnContainerArchiviate"></div>
+		</div>
+
+	</div>
+
+
+	<script type="text/javascript" th:src="@{/javascript/adminPage.js}"></script>
+	<script type="text/javascript" th:src="@{/javascript/personalPage.js}"></script>
+
+</body>
+
+
+</html>
